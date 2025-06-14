@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+
+<div class="top-buttons" style="display:flex; justify-content: end; padding: 10px 20px 0 0; gap: 10px;">
+  <button id="darkModeToggle">🌙 Dark Mode</button>
+  <button id="logoutBtn">Logout</button>
+</div>
+
+
+
+  <h1>Digital Time Capsule</h1>
+  <!-- rest of the form -->
+
+
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <button id="toggleFormBtn">+ Create Capsule</button>
+      <form id="capsuleForm" class="hidden">
+        <h2>Create Capsule</h2>
+
+        <input type="text" id="title" placeholder="Capsule Title" required />
+        <textarea id="message" placeholder="Your message..." required></textarea>
+        <input type="datetime-local" id="unlockDate" required />
+
+        <input type="email" id="recipientEmail" placeholder="Recipient Email (optional)" />
+        <textarea id="secretMessage" placeholder="Secret message (optional)"></textarea>
+
+        <label>Upload Image (optional):</label>
+        <input type="file" id="imageInput" accept="image/*" />
+
+        <select id="theme">
+          <option value="">Select Theme</option>
+          <option value="nostalgic">Nostalgic</option>
+          <option value="celebration">Celebration</option>
+        </select>
+
+        <button type="submit">Save Capsule</button>
+      </form>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main">
+      <h1>Your Time Capsules</h1>
+      <div id="capsuleList"></div>
+    </main>
+  </div>
+
+  <script type="module" src="./js/dashboard.js"></script>
+</body>
+</html>

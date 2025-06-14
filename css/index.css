@@ -1,0 +1,266 @@
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+
+      /* width: px; */
+      gap: 5px;
+    }
+
+    .logo img {
+      width: 80px;
+    }
+
+    .nav-links a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .nav-actions a {
+      margin-left: 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .btn-outline {
+      border: 1px solid #c89d55;
+      color: #c89d55;
+    }
+
+    .btn-solid {
+      background-color: #c89d55;
+      color: white;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(to bottom, #051623, #1a2434);
+      color: white;
+      padding: 4rem 2rem;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .hero-content {
+      max-width: 50%;
+    }
+
+    .hero-content h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-content button {
+      margin-right: 1rem;
+      padding: 0.7rem 1.2rem;
+      border: none;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn-cta {
+      background-color: #c89d55;
+      color: white;
+    }
+
+    .btn-secondary {
+      background: none;
+      border: 1px solid white;
+      color: white;
+    }
+
+    .hero img {
+      max-width: 40%;
+      border-radius: 10px;
+    }
+
+    /* Cards Section */
+    .cards {
+      background-color: #fef1dd;
+      display: flex;
+      justify-content: space-around;
+      padding: 3rem 2rem;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      padding: 1.5rem;
+      width: 300px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    .card h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #f7f7f7;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+      border-top: 1px solid #ccc;
+    }
+
+    footer .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      text-align: left;
+      margin-bottom: 1rem;
+    }
+
+    .footer-column {
+      flex: 1;
+      margin: 1rem;
+      min-width: 180px;
+    }
+
+    .footer-column h4 {
+      margin-bottom: 0.5rem;
+      color: #222;
+    }
+
+    .footer-column a {
+      display: block;
+      color: #555;
+      text-decoration: none;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-social {
+      margin-top: 1rem;
+    }
+
+    .footer-social a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #333;
+    }
+    .perfect-for {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #f6ebdb;
+}
+
+.perfect-for h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #1e2d3b;
+  margin-bottom: 8px;
+}
+
+.perfect-for p {
+  font-size: 16px;
+  color: #6b6b6b;
+  margin-bottom: 40px;
+}
+
+.occasion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.occasion-card {
+  position: relative;
+  height: 260px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  align-items: flex-end;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.occasion-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.occasion-card .content {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  padding: 16px;
+  width: 100%;
+}
+
+.occasion-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.occasion-card p {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+@media (max-width: 480px) {
+      body {
+        padding: 10px;
+      }
+
+      .container {
+        padding: 15px;
+      }
+
+      textarea, input[type="datetime-local"], button {
+        font-size: 1rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+    }

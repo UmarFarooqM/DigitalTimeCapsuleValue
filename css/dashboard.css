@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #c4ceb1;
+  color: #333;
+}
+
+h1{
+ margin-top: 0;
+
+
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  background-color: #1e2a38;
+  color: #fff;
+  padding: 20px;
+  width: 280px;
+  overflow-y: auto;
+}
+
+.sidebar button {
+  width: 100%;
+  padding: 10px;
+  background-color: #00bcd4;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+.sidebar form.hidden {
+  display: none;
+}
+
+.sidebar form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar input,
+.sidebar textarea,
+.sidebar select {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.main {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+#capsuleList {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+
+.capsule-card {
+  /* editing transition */
+   transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+.capsule-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+
+.capsule-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+/* logout */
+
+/* Top controls (Logout + Dark Mode) */
+.top-controls {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.top-controls button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2e3a59;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.top-controls button:hover {
+  background-color: #1c253b;
+}
+/* dark mode */
+
+/* Fix top padding and align content properly */
+.main-content {
+  padding: 40px 30px 30px 30px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Refined header style */
+.main-content h2 {
+  margin-top: 0;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Dark mode support */
+body.dark-mode {
+ 
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+
+body.dark-mode .main-content h2 {
+  color: #f0f0f0;
+}
+
+body.dark-mode .capsule-card {
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+  border: 1px solid #444;
+}
+
+body.dark-mode .capsule-card img {
+  border: 1px solid #555;
+}
+
+

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Digital Time Capsule</title>
+  <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+
+  <div class="auth-box">
+    <h1>Welcome Back</h1>
+    <form id="login-form">
+      <input type="email" id="login-email" placeholder="Email" required />
+      <input type="password" id="login-password" placeholder="Password" required />
+      <button type="submit">Login</button>
+      <p id="login-message"></p>
+    </form>
+    <p class="switch-text">
+      Don't have an account? <a href="register.html">Register</a>
+    </p>
+  </div>
+
+  <!-- Proper module script to load auth logic -->
+  <script type="module" src="./js/auth.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Digital Time Capsule</title>
+ <link rel="stylesheet" href="./css/login.css">
+
+</head>
+<body>
+
+  <div class="auth-box">
+    <h1>Welcome Back</h1>
+    <form id="login-form">
+      <input type="email" id="login-email" placeholder="Email" required />
+      <input type="password" id="login-password" placeholder="Password" required />
+      <button type="submit">Login</button>
+      <p id="login-message"></p>
+    </form>
+    <p class="switch-text">
+      Don't have an account? <a href="register.html">Register</a>
+    </p>
+  </div>
+
+  <script type="module" src="./js/auth.js"></script>
+
+  
+</body>
+</html>
+
+<script>
+  import { registerUser } from "./auth.js";
+
+document.getElementById("registerForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const email = e.target.email.value;
+  const password = e.target.password.value;
+
+  try {
+    await registerUser(email, password);
+    window.location.href = "./dashboard";
+  } catch (error) {
+    alert("Error: " + error.message);
+  }
+});
+
+</script> -->

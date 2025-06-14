@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .hidden{
+        display : none;
+
+      }
+    </style>
+</head>
+<body>
+    
+
+  <h2>firebase authorization</h2>
+
+  <div id ="signup-container">
+    <h3>sing up</h3>
+<input type="email"  id="signup-email" placeholder="enter email">
+<input type="password" id="signup-password" placeholder="enter the password" >
+<button id ="signup-btn">sign up</button>
+<p id="signup-message"></p>
+  </div>
+
+  <div id ="login-container">
+    <h3>login</h3>
+<input type="email"  id="login-email" placeholder="enter email">
+<input type="password" id="login-password" placeholder="enter the password" >
+<button id ="login-btn">login</button>
+<p id="login-message"></p>
+  </div>
+   
+
+  <div id="logout-container">
+<h3>welcome,  <span id="user-email"></span></h3>
+<button id="logout-btn" >logout</button>
+  </div>
+
+
+    <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-analytics.js";
+   import { getAuth, createUserWithEmailAndPassword , signInWithEmailAndPassword , signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-auth.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyBeJILrQVpcLAzlg2Kt1z5pt9aDe4OBxfM",
+    authDomain: "auth-bd2d2.firebaseapp.com",
+    projectId: "auth-bd2d2",
+    storageBucket: "auth-bd2d2.firebasestorage.app",
+    messagingSenderId: "350399634603",
+    appId: "1:350399634603:web:45d8a88f56085952d3ebee",
+    measurementId: "G-BQL71TBN56"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const auth = getAuth(app);
+
+
+  document.getElementById("signup-btn").addEventListener('click',()=>{
+    let email = document.getElementById("signup-email").value;
+    let password = document.getElementById("signup-password").value;
+    createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredentials)=>{
+      document.getElementById("signup-message").innerText ="signin succes"
+    }).catch((error)=>{
+      document.getElementById("signup-message").innerText = error.message
+    });
+  });
+
+
+  document.getElementById("login-btn").addEventListener('click',()=>{
+    let email = document.getElementById("login-email").value;
+    let password = document.getElementById("login-password").value;
+    signInWithEmailAndPassword(auth, email, password)
+    .then((userCredentials)=>{
+      document.getElementById("login-message").innerText ="login succes"
+    }).catch((error)=>{
+      document.getElementById("login-message").innerText = error.message
+    }); 
+  });
+    
+
+
+    document.getElementById("logout-btn").addEventListener("click",()=>{
+      signOut(auth)
+      .then(()=>{
+        alert("logout out successfully")
+      }).catch(()=>{
+        alert(error.message)
+      })
+
+    })
+
+
+      onAuthStateChanged(auth,(user)=>{
+        if(user){
+          document.getElementById("user-email").innerText = user.email ;
+          document.getElementById("signup-container").classList.add("hidden")
+           document.getElementById("login-container").classList.add("hidden")
+           document.getElementById("logout-container").classList.remove("hidden")
+        }
+        else{
+            document.getElementById("signup-container").classList.remove("hidden")
+          document.getElementById("login-container").classList.remove("hidden")   
+          document.getElementById("logout-container").classList.add("hidden")
+        }
+      })
+
+  
+
+</script>
+</body>
+</html>
+
+
+
